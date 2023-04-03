@@ -1,0 +1,242 @@
+*{
+    font-size: 16px;
+}
+
+/* HEADER */
+
+header{
+    position: absolute;
+    z-index: 1; /*Tăng độ ưu tiên khi có 2 position*/
+    /* z-index đi cùng position */
+
+
+    /* Căn giữa position theo chiều ngang */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .logo i{
+    color: green;
+}
+
+header .logo span{
+    font-size: 2rem;
+}
+
+header .menu li{
+    margin: 0 0.8rem;
+    border: none;
+}
+
+header .menu li a{
+    color: white !important;
+}
+
+header .menu li.active a{
+    color: green !important;
+    transition: all 0.5s;
+}
+
+header .menu li a::after{
+    content: "";
+    width: 0;
+    display: block;
+    height: 3px;
+    background-color: green;
+    transition: all 0.5s;
+}
+
+header .menu li.active a::after{
+    width: 100%;
+}
+
+header .menu li:hover a{
+    color: green !important;
+}
+
+header .menu li:hover a::after{
+    width: 100%;
+}
+
+
+/* CAROUSEL */
+.carousel-item{
+    height: 100vh; 
+    /* Full màn hình người dùng */
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-item:nth-child(1){
+    background-image: url("./../images/finland.jpg");
+}
+
+.carousel-item:nth-child(2){
+    background-image: url("./../images/mountains.jpg");
+}
+
+.carousel-item:nth-child(3){
+    background-image: url("./../images/mountains-1.jpg");
+}
+
+.carousel-caption-thumb{
+    width: 150px;
+    margin: 0 auto;
+}
+
+.carousel-caption-thumb img{
+    border-radius: 50%;
+}
+
+/* Căn giữa khi có position */
+/* Mặc định có position */
+.carousel-caption{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#demo .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+#demo .carousel-indicators li.active{
+    background-color: green;
+}
+
+.carousel-caption h3{
+    font-size: 3rem;
+}
+
+
+/* PROJECTS */
+
+
+#projects .title h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1d2d;
+    margin-bottom: 15px;
+}
+
+.card-body h4{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.card-body p{
+    color: #585858;
+}
+
+#projects .card {
+    border-radius: 20px;
+    overflow: hidden;
+    border:  none;
+    /* cắt phần dư */
+    box-shadow: 0 0 10px rgba(0,0,0,.13) ;
+}
+
+#projects .card-body{
+    border: 1px solid rgba(0,0,0,.13);
+    border-radius: 0 0 20px 20px;
+    transition: all 0.5s;
+}
+
+#projects .card:hover .card-body{
+    color:green;
+    border-color: green;
+    border-top-color: transparent;
+}
+
+/* .nav-pills{
+    justify-content: center;
+} */
+
+.nav-item{
+    border: 1px solid #1a1d2d;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.nav-item a{
+    color: #1a1d2d;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #35a22c;
+    color: white;
+}
+
+.projects__content{
+    padding-top: 20px;
+}
+
+#services{
+    background-image: url("./../images/3.jpg");
+    background-position: center;
+    background-size: cover;
+    /* Ảnh kéo theo */
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+#services .title{
+    position: relative;
+}
+
+#services .title p{
+    padding: 20px 0 40px 0;
+}
+
+#services .title h1{
+    font-weight: 700;
+}
+
+#services .service__content .card{
+    text-align: center;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.313);
+    color: white;
+    padding: 2rem;
+    transition: all 0.5s;
+    /* Độ nhòe màu : blur */
+    backdrop-filter: blur(4px); 
+}
+
+#services .service__content .card i{
+    color: #35a22c;
+    font-size: 3rem;
+}
+
+#services .service__content .card h4{
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+#services .service__content .card:hover{
+    background-color: black;
+    border: 1px solid white;
+}
+
+#services .service__overlay{
+    position: absolute;
+    background-color: #0000007d;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 576px) {
+    #services .service__content .card{
+        margin: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #services .service__content .card{
+        margin: 1rem;
+    }
+}
